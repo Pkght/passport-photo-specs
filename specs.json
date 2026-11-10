@@ -1,0 +1,207 @@
+{
+  "name": "passport-photo-specs",
+  "description": "Official photo and signature upload requirements for common passport, visa and ID applications, each with its official source.",
+  "checked": "2026-10",
+  "maintainer": "Toolwell (https://toolwell.app)",
+  "units": {
+    "kb": "1 KB = 1,000 bytes. Forms differ on whether 1 KB is 1,000 or 1,024 bytes; staying under the 1,000-byte figure passes both.",
+    "head_ratio": "Head height (bottom of chin to top of head) as a fraction of the image height."
+  },
+  "documents": [
+    {
+      "id": "us-passport",
+      "name": "US passport photo",
+      "country": "US",
+      "issuer": "U.S. Department of State",
+      "print": { "width_mm": 51, "height_mm": 51, "head_mm": [25, 35] },
+      "digital": { "format": "jpeg", "aspect": "1:1", "min_px": [600, 600] },
+      "background": "Plain white or off-white, no shadows",
+      "photo_age": "Taken within the last 6 months",
+      "glasses": "Not allowed, except with a signed medical statement",
+      "notes": ["Neutral expression or natural smile, both eyes open, facing the camera"],
+      "sources": [
+        { "title": "U.S. Department of State: Passport photos", "url": "https://travel.state.gov/en/passports/apply/help/photos.html" }
+      ],
+      "tool": "https://toolwell.app/us-passport-photo"
+    },
+    {
+      "id": "us-visa-ds160",
+      "name": "US visa photo (DS-160)",
+      "country": "US",
+      "issuer": "U.S. Department of State",
+      "print": { "width_mm": 51, "height_mm": 51, "note": "Only if a printed photo is asked for" },
+      "digital": { "format": "jpeg", "aspect": "1:1", "min_px": [600, 600], "max_px": [1200, 1200], "max_kb": 240, "head_ratio": [0.5, 0.69] },
+      "background": "Plain white or off-white",
+      "photo_age": "Taken within the last 6 months",
+      "glasses": "Not allowed",
+      "sources": [
+        { "title": "U.S. Department of State: Visa photo requirements", "url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/photos.html" },
+        { "title": "U.S. Department of State: Digital image requirements", "url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/photos/digital-image-requirements.html" }
+      ],
+      "tool": "https://toolwell.app/us-visa-photo"
+    },
+    {
+      "id": "us-dv-lottery",
+      "name": "Diversity Visa (DV Lottery) entry photo",
+      "country": "US",
+      "issuer": "U.S. Department of State",
+      "digital": { "format": "jpeg", "aspect": "1:1", "exact_px": [600, 600], "max_kb": 240, "head_ratio": [0.5, 0.69] },
+      "background": "Plain white or off-white",
+      "photo_age": "Taken within the last 6 months, showing how you look now",
+      "glasses": "Not allowed",
+      "notes": [
+        "Head covering only if worn daily for religious reasons, with the full face visible",
+        "Scanning a print: 2 x 2 in (51 x 51 mm) scanned at 300 pixels per inch",
+        "A photo for each person on the entry: entrant, spouse and each unmarried child under 21",
+        "Rules are from the DV-2026 instructions, the latest published at the time of checking"
+      ],
+      "sources": [
+        { "title": "Federal Register: Diversity Visa Instructions for DV-2026", "url": "https://www.federalregister.gov/documents/2024/10/01/2024-22482/diversity-visa-instructions-for-dv-2026" },
+        { "title": "U.S. Department of State: Digital image requirements", "url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/photos/digital-image-requirements.html" },
+        { "title": "U.S. Department of State: Electronic Diversity Visa Program (official entry site)", "url": "https://dvprogram.state.gov/" }
+      ],
+      "tool": "https://toolwell.app/dv-lottery-photo"
+    },
+    {
+      "id": "uk-passport-online",
+      "name": "UK passport photo (online application)",
+      "country": "GB",
+      "issuer": "HM Passport Office",
+      "digital": { "format": "jpeg", "min_px": [600, 750], "min_kb": 50, "max_kb": 10000, "crop": "Do not crop to passport size: include head, shoulders and upper body" },
+      "background": "Plain, light-coloured, in clear contrast to you",
+      "photo_age": "Taken within the last month; a new photo for every new passport",
+      "notes": ["Must be unaltered by computer software"],
+      "sources": [
+        { "title": "GOV.UK: Digital photo rules for passports", "url": "https://www.gov.uk/photos-for-passports/digital-photo-rules" }
+      ],
+      "tool": "https://toolwell.app/uk-passport-photo"
+    },
+    {
+      "id": "uk-passport-print",
+      "name": "UK passport photo (paper form)",
+      "country": "GB",
+      "issuer": "HM Passport Office",
+      "print": { "width_mm": 35, "height_mm": 45, "head_mm": [29, 34], "copies": 2 },
+      "background": "Plain cream or light grey",
+      "photo_age": "Taken within the last month; a new photo for every new passport",
+      "notes": [
+        "Professional print quality on plain white photo paper, no border",
+        "Not cut down from a larger photo",
+        "Must be unaltered by computer software"
+      ],
+      "sources": [
+        { "title": "GOV.UK: Printed passport photo requirements", "url": "https://www.gov.uk/photos-for-passports/photo-requirements" }
+      ],
+      "tool": "https://toolwell.app/uk-passport-photo"
+    },
+    {
+      "id": "schengen-visa",
+      "name": "Schengen visa photo",
+      "country": "EU",
+      "issuer": "Schengen states (EU Visa Code)",
+      "print": { "width_mm": 35, "height_mm": 45, "head_mm": [32, 36] },
+      "background": "Plain, light-coloured; white is accepted everywhere",
+      "photo_age": "Not older than 6 months",
+      "notes": [
+        "Head covering not allowed, except for religious or medical reasons",
+        "Usually 1-2 printed photos; check your visa centre's checklist",
+        "No official digital file size; each visa centre sets its own upload rules"
+      ],
+      "sources": [
+        { "title": "Ministry of Foreign Affairs of the Czech Republic: Schengen visa photo (EU Visa Code)", "url": "https://mzv.gov.cz/jnp/en/information_for_aliens/supporting_documents_overview/photo.html" }
+      ],
+      "tool": "https://toolwell.app/schengen-visa-photo"
+    },
+    {
+      "id": "india-evisa",
+      "name": "India e-Visa photo",
+      "country": "IN",
+      "issuer": "Government of India (Indian Visa Online)",
+      "digital": { "format": "jpeg", "aspect": "1:1", "min_px": [350, 350], "max_px": [1000, 1000], "min_kb": 10, "max_kb": 300 },
+      "background": "Plain white or light-coloured, no shadows, no border",
+      "notes": ["Full face, front view, eyes open, head centred"],
+      "sources": [
+        { "title": "Indian Visa Online: Photo upload guide (PDF)", "url": "https://indianvisaonline.gov.in/visa/VSS_IMAGE.pdf" }
+      ],
+      "tool": "https://toolwell.app/india-visa-photo"
+    },
+    {
+      "id": "india-passport-seva",
+      "name": "Indian passport photo (Passport Seva upload)",
+      "country": "IN",
+      "issuer": "Ministry of External Affairs (Passport Seva)",
+      "digital": { "format": "jpeg", "exact_px": [630, 810], "max_kb": 250, "max_exclusive": true },
+      "background": "Plain, light-coloured (white is safest), no shadows",
+      "notes": [
+        "Face covers about 80% of the photo, head straight and centred",
+        "Eyes open, natural expression (no smiling or frowning), forehead and ears visible",
+        "Dark clothes; no cap, hair or hijab over the forehead; a turban must be light-coloured",
+        "No filters or photo editing",
+        "Photo and signature can be uploaded up to 12 times in total, then uploads are blocked"
+      ],
+      "sources": [
+        { "title": "Passport Seva photo/signature upload instructions (PDF)", "url": "https://assets.ctfassets.net/xxg4p8gt3sg6/65N7mZz0hfj57DM1VlnLA2/284bfc9bd711eda8a8564dad5019cc70/PASSPORT_SEVA_PHOTO_UPLOAD_INSTUCTIONS.pdf" },
+        { "title": "VFS Global (USA): Checklist, adult reissue of passport (PDF)", "url": "https://services.vfsglobal.com/one-pager/india/united-states-of-america/passport-services/pdf/Checklist-Adult-Reissue-of-Passport-May-2026.pdf" },
+        { "title": "Government of India: Passport Seva", "url": "https://www.passportindia.gov.in/" }
+      ],
+      "tool": "https://toolwell.app/indian-passport-photo"
+    },
+    {
+      "id": "india-passport-seva-signature",
+      "name": "Indian passport signature (Passport Seva upload)",
+      "country": "IN",
+      "issuer": "Ministry of External Affairs (Passport Seva)",
+      "digital": { "format": "jpeg", "max_kb": 100 },
+      "notes": [
+        "Sign with a bold black or blue pen on plain white paper",
+        "Crop a rectangle around the signature; don't upload the entire page",
+        "Photo and signature together: up to 12 uploads"
+      ],
+      "sources": [
+        { "title": "Passport Seva photo/signature upload instructions (PDF)", "url": "https://assets.ctfassets.net/xxg4p8gt3sg6/65N7mZz0hfj57DM1VlnLA2/284bfc9bd711eda8a8564dad5019cc70/PASSPORT_SEVA_PHOTO_UPLOAD_INSTUCTIONS.pdf" },
+        { "title": "Government of India: Passport Seva", "url": "https://www.passportindia.gov.in/" }
+      ],
+      "tool": "https://toolwell.app/passport-seva-signature"
+    },
+    {
+      "id": "india-oci-photo",
+      "name": "OCI card photo",
+      "country": "IN",
+      "issuer": "Government of India (OCI Services)",
+      "print": { "width_mm": 51, "height_mm": 51, "head_mm": [25, 35] },
+      "digital": { "format": "jpeg", "aspect": "1:1", "min_px": [200, 200], "max_px": [1500, 1500] },
+      "background": "Plain, light-coloured, no shadows on the face or behind",
+      "glasses": "Allowed, but no glare, no tinted or dark lenses, and frames must not cover the eyes",
+      "notes": [
+        "Full face, front view, eyes open and level, natural expression, both edges of the face visible",
+        "Head covering only for religious reasons, with the face from chin to forehead and both edges visible",
+        "Do not retouch, enhance or soften the photo",
+        "File-size limits are quoted differently by different sources; staying under 200 KB passes the stricter figure"
+      ],
+      "sources": [
+        { "title": "Government of India: Requirement of photograph for OCI Registration (PDF)", "url": "https://ociservices.gov.in/Photo-Spec-FINAL.pdf" },
+        { "title": "VFS Global (USA): OCI services information", "url": "https://services.vfsglobal.com/one-pager/india/united-states-of-america/oci-services/" },
+        { "title": "Government of India: OCI Services (official portal)", "url": "https://ociservices.gov.in/" }
+      ],
+      "tool": "https://toolwell.app/oci-photo"
+    },
+    {
+      "id": "india-oci-signature",
+      "name": "OCI card signature",
+      "country": "IN",
+      "issuer": "Government of India (OCI Services)",
+      "digital": { "format": "jpeg", "aspect": "3:1", "min_px": [200, 67], "max_px": [1500, 500] },
+      "background": "Plain white, signature clearly visible",
+      "notes": [
+        "Aspect ratio is written as 1:3 (height : width): three times wider than tall",
+        "Children who can't sign give a left-hand thumb impression instead",
+        "File-size limits are quoted as 200 KB or 500 KB by different sources; staying under 200 KB passes both"
+      ],
+      "sources": [
+        { "title": "Government of India: Requirement of photograph for OCI Registration (PDF)", "url": "https://ociservices.gov.in/Photo-Spec-FINAL.pdf" },
+        { "title": "VFS Global (USA): OCI services information", "url": "https://services.vfsglobal.com/one-pager/india/united-states-of-america/oci-services/" }
+      ],
+      "tool": "https://toolwell.app/oci-signature"
+    }
+  ]
+}
